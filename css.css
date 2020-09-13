@@ -1,0 +1,107 @@
+/* general styles */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 16px;
+
+}
+#bsk ul{
+    margin-top: 40px;
+    list-style: none;
+}
+#bsk ul >li{
+    padding: 10px;
+    background: royalblue;
+
+}
+#bsk ul li a{
+    
+    vertical-align: center;
+    margin-top: 30px;
+    width: 100%;
+    color: ghostwhite;
+    text-decoration: none;
+    
+}
+#bsk ul li:hover{
+    filter: brightness(.8);
+}
+
+/* modal styles */
+#bsk .modal{
+    background: rgba(3, 13, 43, 0.356);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    /* hid the modal
+    by default and note 
+    that am using opacity 
+    and setting visibility to none
+    and not display: none; proparty.
+    this is because display none will not give us the 
+    flexibility to style and show the content again in css 
+    but it will nee js to do the job*/
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+  
+}
+
+/* moal style content styles */
+.modal-content{
+    width: 50%;
+    background: ghostwhite;
+    color: rgb(2, 16, 58);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 30px;
+    line-height: 25px;
+    border-radius: 12px;
+    transform: translate(-50%, -50%);
+
+    /* hid the content
+    by default and note 
+    that am using opacity 
+    and setting visibility to none
+    and not display: none; proparty 
+    this is because display none will not give us the 
+    flexibility to style and show the content again in css 
+    but it will nee js to do the job*/
+    opacity: 0;
+    visibility: hidden;
+    
+}
+.modal-content h1{
+    padding: 10px;
+    text-transform: capitalize;
+    color: crimson;
+}
+.modal-content p{
+    color: royalblue;
+    filter: brightness(.8);
+}
+
+/* this is where the magic happends */
+#poup:target{
+    opacity: 1;
+    visibility: visible ;
+    transition: 3.5s ;
+}
+#poup:target .modal-content{
+    opacity: 1;
+    visibility: visible ;
+    transition: 3.5s ;
+}
+
